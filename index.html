@@ -32,7 +32,15 @@
             text-transform: uppercase; 
         }
         .ubicacion-tag { 
-            font-size: 0.7em; 
+            font-size: 2em; 
+            letter-spacing: 3px; 
+            color: #888; 
+            display: block; 
+            margin-bottom: 20px; 
+            text-transform: uppercase;
+        }
+        .encabezado-tag { 
+            font-size: 0,7em; 
             letter-spacing: 3px; 
             color: #888; 
             display: block; 
@@ -155,7 +163,7 @@
 
     <section class="fondo-claro seccion-padding">
         <div class="contenedor fade-in">
-            <span class="ubicacion-tag">LIFESTYLE DEVELOPERS</span>
+            <span class="encabezado-tag">LIFESTYLE DEVELOPERS</span>
             <h2>NUESTRA FILOSOFÍA</h2>
             
             <div class="grid-2">
@@ -185,7 +193,7 @@
                     <div class="contenedor-imagen">
                         <img src="brisas dron.jpg" alt="Residencias Privadas" class="imagen-obra">
                     </div>
-                    <h3>RESIDENCIAS PRIVADAS</h3>
+                    <h3>RESIDENCIAS PRIVADAS </h3><span class="calles">| 2002</span></h3>
                     <p class="calles">Juana Manso 1661 & Olga Cossettini 1660</p>
                     <p>Dos edificios destinados exclusivamente a <strong>Vivienda de Uso Permanente</strong>.</p>
                     <p class="nota-exclusividad">Queda estrictamente excluido el uso para alquileres temporarios o fines turísticos, garantizando la privacidad absoluta.</p>
@@ -195,7 +203,7 @@
                     <div class="contenedor-imagen">
                         <img src="HOTEL-MADERO_LOBBY_161-800x445.jpeg" alt="Viviendas en Suite" class="imagen-obra">
                     </div>
-                    <h3>VIVIENDAS EN SUITE</h3>
+                    <h3>VIVIENDAS EN SUITE</h3><span class="calles">| 2004</span></h3>
                     <p class="calles">Bvd. Rosario Vera Peñaloza 360</p>
                     <p>Sede del <strong>HOTEL MADERO</strong>, donde el arte contemporáneo y el ocio conviven con independencia de las áreas residenciales.</p>
                 </article>
@@ -204,7 +212,7 @@
                     <div class="contenedor-imagen">
                         <img src="corporativo ofi.jpg" alt="Corporativo" class="imagen-obra">
                     </div>
-                    <h3>CORPORATIVO</h3>
+                    <h3>CORPORATIVO</h3><span class="calles">| 2003</span></h3>
                     <p class="calles">Encarnación Ezcurra 365</p>
                     <p>Edificio oficinas comerciales premium, integrando el concepto Work & Live en un entorno único.</p>
                 </article>
@@ -220,25 +228,12 @@
             <p>Proyectos de gran escala que transformaron el paisaje urbano de la ciudad.</p>
 
             <div class="grid-3">
-                <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="beiro.jpg" alt="Torre Devoto" class="imagen-obra">
-                    </div>
-                    <h3>TORRE DEVOTO <span class="calles">| 2019</span></h3>
-                    <p>Desarrollado por <strong>NEHUENTE</strong>. Un edificio icónico, único y diferencial en el corazón de Villa Devoto.</p>
-                    <ul class="lista-sobria">
-                        <li>195 departamentos y 132 cocheras.</li>
-                        <li>Amplios espacios verdes y áreas comerciales.</li>
-                        <li>Piscina, Solarium, SUM y Gimnasio.</li>
-                    </ul>
-                         <p class="firma-desarrollo">Desarrollado por NEHUENTE S.R.L.</p>
-                </article>
-
+               
                 <article class="card-obra fade-in">
                     <div class="contenedor-imagen">
                         <img src="torres de figueroa a.jpg" alt="Torres Figueroa Alcorta" class="imagen-obra">
                     </div>
-                    <h3>TORRES DE FIGUEROA ALCORTA <span class="calles">| 1995</span></h3>
+                    <h3>TORRES DE FIGUEROA ALCORTA</h3><span class="calles">| 1995</span></h3>
                     <p>Complejo residencial en Belgrano Chico sobre una manzana de 12.700 m² parquizada.</p>
                     <ul class="lista-sobria">
                         <li>3 torres de 19 pisos (189 departamentos).</li>
@@ -252,14 +247,29 @@
                     <div class="contenedor-imagen">
                         <img src="buenos aires.jpg" alt="Torres de Buenos Aires" class="imagen-obra">
                     </div>
-                    <h3>TORRES DE BUENOS AIRES <span class="calles">| 1996</span></h3>
+                    <h3>TORRES DE BUENOS AIRES</h3> <span class="calles">| 1996</span></h3>
                     <p>Ubicado en Av. Belgrano 3251 sobre un terreno de 8.800 m².</p>
                     <ul class="lista-sobria">
                         <li>4 torres (12, 21 y 18 pisos) con 389 departamentos.</li>
                         <li>Jardines, pileta, vestuarios y solarium.</li>
                         <li>Área comercial y de servicios integrada.</li>
                     </ul>
-                         <p class="firma-desarrollo">Desarrollado por YAR Construcciones S.A.</p>
+                    <p class="firma-desarrollo">Desarrollado por YAR Construcciones S.A.</p>
+                    </article>
+                
+                 <article class="card-obra fade-in">
+                    <div class="contenedor-imagen">
+                        <img src="beiro.jpg" alt="Torre Devoto" class="imagen-obra">
+                    </div>
+                    <h3>TORRE DEVOTO</h3><span class="calles">| 2019</span></h3>
+                    <p>Desarrollado por <strong>NEHUENTE</strong>. Un edificio icónico, único y diferencial en el corazón de Villa Devoto.</p>
+                    <ul class="lista-sobria">
+                        <li>195 departamentos y 132 cocheras.</li>
+                        <li>Amplios espacios verdes y áreas comerciales.</li>
+                        <li>Piscina, Solarium, SUM y Gimnasio.</li>
+                    </ul>
+                         <p class="firma-desarrollo">Desarrollado por NEHUENTE S.R.L.</p>
+                               
                 </article>
             </div>
            </div>
@@ -330,7 +340,7 @@
     <section class="fondo-blanco seccion-padding">
         <div class="contenedor fade-in">
             <span class="ubicacion-tag">HISTORIA Y TRAYECTORIA</span>
-            <h2>NUESTROS ORÍGENES</h2>
+            <h2>NUESTROS PRIMEROS DESARROLLOS</h2>
             <p>Los cimientos de nuestra excelencia arquitectónica.</p>
 
             <div class="grid-2">
