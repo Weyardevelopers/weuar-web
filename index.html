@@ -3,291 +3,432 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEYAR - Lifestyle Developers</title>
+    <title>WEYAR | Lifestyle Developers · Desarrollos inmobiliarios en Buenos Aires, Punta del Este y Nueva York</title>
+    <meta name="description" content="Grupo WEYAR: más de 35 años desarrollando con capitales propios obras como Brisas Puerto Madero, Torres de Figueroa Alcorta y Torres de Buenos Aires. Oficinas en alquiler en Brisas Work, Puerto Madero.">
+    <meta name="theme-color" content="#111111">
+    <link rel="canonical" href="https://weyar.com.ar/">
+
+    <!-- Vista previa al compartir (WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="WEYAR">
+    <meta property="og:title" content="WEYAR | Lifestyle Developers">
+    <meta property="og:description" content="Más de 35 años de desarrollos de excelencia en Buenos Aires, Punta del Este y Nueva York. Oficinas en alquiler en Brisas Work, Puerto Madero.">
+    <meta property="og:url" content="https://weyar.com.ar/">
+    <meta property="og:image" content="https://weyar.com.ar/puerto-madero-noche.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='300' fill='%23fff' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        /* === ESTILOS GENERALES Y RESET === */
-        body { 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-            margin: 0; 
-            padding: 0;
-            color: #333; 
-            background-color: #fff;
-            line-height: 1.6;
+        /* ===== BASE ===== */
+        :root {
+            --negro: #111111;
+            --texto: #2b2b2b;
+            --texto-suave: #5f5f5f;
+            --linea: #e2e2e2;
+            --claro: #f6f5f3;
+            --blanco: #ffffff;
+            --acento: #9a7b4f;
         }
-        h2 { 
-            font-size: 2.5em; 
-            font-weight: 300; 
-            letter-spacing: 5px; 
-            margin-bottom: 10px; 
-            border-bottom: 1px solid #000; 
-            display: inline-block; 
-            padding-bottom: 10px; 
-            text-transform: uppercase;
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: 'Jost', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            color: var(--texto);
+            background: var(--blanco);
+            line-height: 1.7;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
         }
-        h3 { 
-            font-size: 1.1em; 
-            font-weight: 700; 
-            letter-spacing: 2px; 
-            margin-bottom: 15px; 
-            text-transform: uppercase; 
-        }
-        .ubicacion-tag { 
-            font-size: 2em; 
-            letter-spacing: 3px; 
-            color: #888; 
-            display: block; 
-            margin-bottom: 20px; 
-            text-transform: uppercase;
-        }
-        .encabezado-tag { 
-            font-size: 0,7em; 
-            letter-spacing: 3px; 
-            color: #888; 
-            display: block; 
-            margin-bottom: 20px; 
-            text-transform: uppercase;
-        }
-        .texto-filosofia {
-            text-align: justify;
-        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
 
-        .contenedor { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        h2 {
+            font-size: clamp(1.8em, 4vw, 2.6em);
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin: 0 0 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--negro);
+            display: inline-block;
+            text-transform: uppercase;
+            color: var(--negro);
+            line-height: 1.2;
+        }
+        h3 {
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin: 0 0 6px;
+            text-transform: uppercase;
+            color: var(--negro);
+        }
+        p { margin: 0 0 16px; }
+
+        .contenedor { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .seccion-padding { padding: 100px 0; }
-        .fondo-claro { background-color: #f9f9f9; border-top: 1px solid #eee; }
-        .fondo-blanco { background-color: #ffffff; }
+        .fondo-claro { background: var(--claro); }
+        .fondo-blanco { background: var(--blanco); }
 
-        /* === 1. HERO SECTION === */
+        .ubicacion-tag {
+            display: block;
+            font-size: 0.85em;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: var(--acento);
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        .bajada { color: var(--texto-suave); max-width: 760px; margin-bottom: 50px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+
+        /* ===== NAVEGACIÓN ===== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+            transition: background .3s, box-shadow .3s;
+        }
+        .nav.solida { background: rgba(17,17,17,.96); box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+        .nav-interior { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { color: #fff; text-decoration: none; font-size: 1.35em; letter-spacing: 6px; font-weight: 400; }
+        .nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: .8em; letter-spacing: 2.5px; text-transform: uppercase; opacity: .85; }
+        .nav-links a:hover { opacity: 1; }
+        .nav-links .nav-destacado { border: 1px solid rgba(255,255,255,.6); padding: 8px 14px; opacity: 1; }
+        .nav-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.6em; cursor: pointer; padding: 6px; }
+
+        /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('puerto-madero-noche.jpg') center/cover;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.7)), url("puerto-madero-noche.jpg") center/cover no-repeat;
+            color: #fff;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            padding: 120px 24px 80px;
         }
-        .hero h1 { font-size: 4em; letter-spacing: 10px; margin: 0; font-weight: 400; }
-        .hero p { font-size: 1.2em; letter-spacing: 5px; margin-top: 10px; color: #ccc; }
+        .hero h1 { font-size: clamp(3em, 9vw, 5.5em); font-weight: 300; letter-spacing: 14px; margin: 0; line-height: 1.1; }
+        .hero .subtitulo { letter-spacing: 8px; font-size: .95em; text-transform: uppercase; margin: 18px 0 14px; opacity: .9; }
+        .hero .claim { font-size: 1.1em; font-weight: 300; max-width: 620px; margin: 0 auto 40px; opacity: .9; }
+        .hero-botones { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-        /* === GRIDS Y TARJETAS === */
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; margin-top: 60px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; }
-        .card-obra { border-top: 2px solid #000; padding-top: 20px; }
-       
-        /* === ESPACIO PARA FOTOS DE EMPRENDIMIENTOS === */
+        .btn {
+            display: inline-block; padding: 14px 28px; text-decoration: none;
+            letter-spacing: 2.5px; font-size: .8em; font-weight: 500; text-transform: uppercase;
+            border: 1px solid currentColor; transition: background .2s, color .2s, border-color .2s;
+        }
+        .btn-claro { color: #fff; }
+        .btn-claro:hover { background: #fff; color: var(--negro); border-color: #fff; }
+        .btn-relleno { background: #fff; color: var(--negro); border-color: #fff; }
+        .btn-relleno:hover { background: transparent; color: #fff; }
+        .btn-oscuro { color: var(--negro); }
+        .btn-oscuro:hover { background: var(--negro); color: #fff; }
+
+        /* ===== CIFRAS ===== */
+        .cifras { background: var(--negro); color: #fff; padding: 50px 0; }
+        .cifras .contenedor { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .cifra-numero { font-size: 2.4em; font-weight: 300; letter-spacing: 2px; line-height: 1.1; }
+        .cifra-texto { font-size: .78em; letter-spacing: 2.5px; text-transform: uppercase; color: #bdbdbd; margin-top: 8px; }
+
+        /* ===== FILOSOFÍA ===== */
+        .pilares { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
+        .pilar { border-top: 1px solid var(--negro); padding-top: 20px; }
+        .pilar p { color: var(--texto-suave); font-size: .95em; margin: 0; }
+
+        /* ===== TARJETAS DE OBRA ===== */
+        .card-obra { display: flex; flex-direction: column; }
+        .contenedor-imagen { overflow: hidden; margin-bottom: 22px; background: #ddd; }
         .imagen-obra {
-            width: 100%;
-            height: 280px;
-            object-fit: cover; 
-            margin-bottom: 20px;
-            filter: grayscale(20%); 
-            transition: filter 0.4s ease, transform 0.4s ease;
+            width: 100%; height: 300px; object-fit: cover;
+            transition: transform .6s ease;
         }
-        .card-obra:hover .imagen-obra {
-            filter: grayscale(0%);
-            transform: scale(1.02); 
+        .card-obra:hover .imagen-obra { transform: scale(1.03); }
+        .imagen-ancha { height: 440px; }
+        .anio {
+            display: inline-block; font-size: .75em; letter-spacing: 2px; color: var(--acento);
+            font-weight: 500; margin-bottom: 10px;
         }
-        .contenedor-imagen {
-            overflow: hidden; 
-            margin-bottom: 20px;
+        .calles { color: var(--texto-suave); letter-spacing: .5px; margin-bottom: 14px; font-size: .95em; }
+        .lista-sobria { list-style: none; padding: 0 0 0 24px; margin: 6px 0 0; border-left: 1px solid var(--negro); }
+        .lista-sobria li { margin-bottom: 12px; font-size: .93em; color: var(--texto); }
+        .nota-exclusividad { font-size: .85em; color: var(--texto-suave); border-top: 1px solid var(--linea); padding-top: 14px; font-style: italic; }
+        .firma-desarrollo {
+            margin-top: 50px; font-size: .72em; color: var(--texto-suave);
+            letter-spacing: 2.5px; text-transform: uppercase; text-align: center;
         }
-        
-        .calles { font-weight: 300; color: #888; letter-spacing: 1px; margin-bottom: 15px; }
-        
-        .lista-sobria { list-style: none; padding: 0; border-left: 1px solid #000; padding-left: 30px; }
-        .lista-sobria li { margin-bottom: 15px; font-size: 0.9em; }
-        .nota-exclusividad { font-size: 0.85em; color: #555; border-top: 1px solid #eee; padding-top: 15px; font-style: italic; }
+        .card-obra .firma-desarrollo { margin-top: auto; padding-top: 24px; text-align: left; }
+        .estado-entregado {
+            border: 1px solid var(--negro); padding: 10px 16px; display: inline-block;
+            font-weight: 500; letter-spacing: 2px; text-transform: uppercase; font-size: .8em; margin-top: 6px;
+        }
+        .link-seccion { font-size: .8em; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 
-        /* === ESTILOS ESPECÍFICOS === */
-        .estado-entregado { border: 1px solid #000; padding: 10px; display: inline-block; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; }
-        .firma-desarrollo { margin-top: 60px; font-size: 0.75em; color: #999; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+        /* ===== OFICINAS ===== */
+        .oficinas { background: var(--negro); color: #e9e9e9; }
+        .oficinas h2 { color: #fff; border-color: #fff; }
+        .oficinas h3 { color: #fff; }
+        .oficinas .bajada { color: #c9c9c9; }
+        .tabla-oficinas { width: 100%; border-collapse: collapse; font-size: .95em; }
+        .tabla-oficinas th {
+            text-align: left; font-weight: 500; letter-spacing: 2px; font-size: .75em; text-transform: uppercase;
+            color: #bdbdbd; border-bottom: 1px solid #fff; padding: 10px 8px;
+        }
+        .tabla-oficinas td { border-bottom: 1px solid #333; padding: 14px 8px; vertical-align: top; }
+        .tabla-oficinas td:first-child { white-space: nowrap; color: #fff; font-weight: 500; }
+        .oficinas .lista-sobria { border-color: #fff; }
+        .oficinas .lista-sobria li { color: #e9e9e9; }
+        .contacto-comercial { margin-top: 36px; padding-top: 28px; border-top: 1px solid #333; }
+        .contacto-comercial p { margin: 6px 0; }
+        .contacto-comercial a { color: #fff; }
+        .contacto-comercial .btn { margin-top: 18px; }
 
-        /* === FOOTER === */
-        .seccion-respaldo { background-color: #111; color: #fff; padding: 80px 20px 40px 20px; border-top: 4px solid #333; text-align: center; }
-        .info-corporativa h2 { border-bottom: none; color: #fff; }
-        .subtitle-footer { font-size: 0.4em; letter-spacing: 8px; color: #888; }
-        .experiencia-tag { font-size: 1.2em; font-weight: bold; margin: 20px 0; color: #d4d4d4; }
-        .filosofia { max-width: 800px; margin: 0 auto 50px auto; color: #999; font-size: 0.95em; }
-        .sociedades-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto 60px auto; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 40px 0; }
-        .sociedad-item h4 { margin: 0; font-size: 1.5em; letter-spacing: 2px; color: #fff; }
-        .sociedad-item p { margin: 5px 0 0 0; font-size: 0.8em; color: #666; text-transform: uppercase; }
-        .cierre-legal { color: #555; font-size: 0.8em; letter-spacing: 1px; }
+        /* ===== FOOTER ===== */
+        .footer { background: #0b0b0b; color: #cfcfcf; padding: 90px 0 40px; text-align: center; }
+        .footer-logo { font-size: 2.2em; letter-spacing: 10px; font-weight: 300; color: #fff; margin: 0; }
+        .footer-sub { letter-spacing: 6px; font-size: .8em; text-transform: uppercase; color: #9a9a9a; margin: 10px 0 40px; }
+        .footer-contacto { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 50px; }
+        .footer-contacto a { color: #fff; text-decoration: none; letter-spacing: 1px; border-bottom: 1px solid #555; padding-bottom: 2px; }
+        .footer-contacto a:hover { border-color: #fff; }
+        .empresas {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+            border-top: 1px solid #262626; border-bottom: 1px solid #262626; padding: 34px 0; max-width: 960px; margin: 0 auto;
+        }
+        .empresa-nombre { font-size: 1.25em; font-weight: 500; letter-spacing: 3px; color: #fff; }
+        .empresa-tipo { font-size: .72em; letter-spacing: 2px; color: #8d8d8d; text-transform: uppercase; }
+        .copy { font-size: .75em; color: #7d7d7d; margin-top: 34px; letter-spacing: 1px; }
 
-        /* === BOTÓN FLOTANTE WHATSAPP === */
         .btn-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            position: fixed; bottom: 26px; right: 26px; z-index: 40;
+            width: 58px; height: 58px; border-radius: 50%; background: #25d366;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,.25); transition: transform .2s;
         }
-        .btn-whatsapp:hover {
-            transform: scale(1.1) translateY(-5px);
-            background-color: #1EBE55;
-            box-shadow: 0px 6px 20px rgba(0,0,0,0.25);
-        }
-        .btn-whatsapp svg {
-            width: 35px;
-            height: 35px;
-            fill: currentColor;
+        .btn-whatsapp:hover { transform: scale(1.07); }
+        .btn-whatsapp svg { width: 30px; height: 30px; fill: #fff; }
+
+        /* ===== ANIMACIÓN SUAVE (el contenido se ve aunque no cargue JS) ===== */
+        .js .fade-in { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+        .js .fade-in.visible { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            .js .fade-in { opacity: 1; transform: none; transition: none; }
+            html { scroll-behavior: auto; }
         }
 
-        /* === DISEÑO RESPONSIVO === */
-        @media (max-width: 900px) {
-            .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-            .sociedades-grid { grid-template-columns: repeat(2, 1fr); }
-            h2 { font-size: 2em; }
-            .hero h1 { font-size: 2.5em; }
-            .btn-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; } 
-            .btn-whatsapp svg { width: 30px; height: 30px; }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 960px) {
+            .grid-3, .pilares { grid-template-columns: 1fr 1fr; }
+            .cifras .contenedor, .empresas { grid-template-columns: 1fr 1fr; }
         }
-
-        /* === ANIMACIONES === */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 760px) {
+            body { font-size: 16px; }
+            .seccion-padding { padding: 70px 0; }
+            .grid-2, .grid-3, .pilares { grid-template-columns: 1fr; gap: 50px; }
+            .imagen-ancha { height: 260px; }
+            .nav { background: rgba(17,17,17,.96); }
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none; position: absolute; top: 72px; left: 0; right: 0;
+                flex-direction: column; gap: 0; background: rgba(17,17,17,.98); padding: 10px 24px 24px;
+            }
+            .nav-links.abierto { display: flex; }
+            .nav-links li { border-bottom: 1px solid #2a2a2a; }
+            .nav-links a { display: block; padding: 16px 0; }
+            .nav-links .nav-destacado { border: 0; padding: 16px 0; }
+            .hero .subtitulo { letter-spacing: 5px; }
+            .tabla-oficinas td:first-child { white-space: normal; }
+        }
     </style>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>WEYAR</h1>
-        <p>LIFESTYLE DEVELOPERS</p>
+    <!-- ===== NAVEGACIÓN ===== -->
+    <nav class="nav" id="nav" aria-label="Principal">
+        <div class="contenedor nav-interior">
+            <a href="#inicio" class="nav-logo">WEYAR</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#brisas">Brisas</a></li>
+                <li><a href="#obras">Obras</a></li>
+                <li><a href="#internacional">Internacional</a></li>
+                <li><a href="#oficinas" class="nav-destacado">Oficinas en alquiler</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="inicio">
+        <div>
+            <h1>WEYAR</h1>
+            <p class="subtitulo">Lifestyle Developers</p>
+            <p class="claim">Más de 35 años desarrollando con capitales propios obras que ya son clásicos de Buenos Aires.</p>
+            <div class="hero-botones">
+                <a href="#obras" class="btn btn-claro">Ver nuestras obras</a>
+                <a href="#oficinas" class="btn btn-relleno">Oficinas en alquiler</a>
+            </div>
+        </div>
     </header>
 
-    <section class="fondo-claro seccion-padding">
-        <div class="contenedor fade-in">
-            <span class="encabezado-tag">LIFESTYLE DEVELOPERS</span>
-            <h2>NUESTRA FILOSOFÍA</h2>
-            
-                 <div class="grid-2">
-                    <div class="texto-filosofia">
-                        <p>El grupo <strong>WEYAR</strong> construye exclusivamente con capitales propios y en general sobre terrenos propios. Es el developer que materializa la continuidad detrás de los proyectos únicos, que ya son clásicos en la ciudad de Buenos Aires como Brisas de Puerto Madero, Torres de Figueroa Alcorta, Torres de Buenos Aires, entre otros. Además WEYAR tiene presencia internacional con sus hoteles en Buenos Aires (Hotel Madero),  Brasil (IBIS Manaos) y desarrollos en la ciudad de Nueva York, en Chelsea y Harlem. Recientemente ha iniciado la expansión hacia Uruguay de WEYAR como compañía SCHARGO S.A.S.</p>
-                        <p>WEYAR se caracteriza por su solidez, confianza y previsibilidad. Siempre con la arquitectura como premisa, la construcción y terminaciones de primer nivel.</p>
-                    </div>
-               
-                <ul class="lista-sobria">
-                        <li><strong>Arquitectura como premisa:</strong> Garantizamos siempre la construcción y terminaciones de primer nivel.</li>
-                        <li><strong>Presencia Internacional:</strong> Contamos con hoteles en Buenos Aires (Hotel Madero), Brasil (IBIS Manaos) y desarrollos en la ciudad de Nueva York.</li>
-                        <li><strong>Expansión constante:</strong> Recientemente hemos iniciado la expansión hacia Uruguay como compañía SCHARGO S.A.S..</li>
-                </ul>
-             </div> </div>
-        </section>
+    <!-- ===== CIFRAS ===== -->
+    <section class="cifras" aria-label="WEYAR en cifras">
+        <div class="contenedor">
+            <div><div class="cifra-numero">35+</div><div class="cifra-texto">Años de trayectoria</div></div>
+            <div><div class="cifra-numero">+1.000</div><div class="cifra-texto">Viviendas desarrolladas</div></div>
+            <div><div class="cifra-numero">4</div><div class="cifra-texto">Países</div></div>
+            <div><div class="cifra-numero">100%</div><div class="cifra-texto">Capitales propios</div></div>
+        </div>
+    </section>
 
-    <section class="fondo-blanco seccion-padding">
+    <!-- ===== NOSOTROS ===== -->
+    <section class="fondo-claro seccion-padding" id="nosotros">
         <div class="contenedor fade-in">
-            <span class="ubicacion-tag">BUENOS AIRES | ARGENTINA</span>
-            <h2>COMPLEJO BRISAS PUERTO MADERO</h2>
-            <p>Un hito arquitectónico que define el estándar de excelencia residencial y corporativa ocupa la Manzana 1K del Dique 2.</p>
+            <span class="ubicacion-tag">Lifestyle Developers</span>
+            <h2>Nuestra filosofía</h2>
+            <div class="grid-2" style="margin-top: 30px;">
+                <p>El grupo <strong>WEYAR</strong> construye exclusivamente con capitales propios y, en general, sobre terrenos propios. Es el developer detrás de proyectos únicos que ya son clásicos en la ciudad de Buenos Aires, como Brisas de Puerto Madero, Torres de Figueroa Alcorta y Torres de Buenos Aires.</p>
+                <p>WEYAR se caracteriza por su solidez, confianza y previsibilidad. Tiene presencia internacional con hoteles en Buenos Aires (Hotel Madero) y Brasil (IBIS Manaos), desarrollos en Nueva York y, desde Uruguay, a través de SCHARGO S.A.S.</p>
+            </div>
+            <div class="pilares">
+                <div class="pilar"><h3>Arquitectura como premisa</h3><p>Construcción y terminaciones de primer nivel en cada proyecto.</p></div>
+                <div class="pilar"><h3>Presencia internacional</h3><p>Hoteles en Buenos Aires y Brasil, y desarrollos en Chelsea y Harlem, Nueva York.</p></div>
+                <div class="pilar"><h3>Expansión constante</h3><p>Nuestra llegada a Uruguay como SCHARGO S.A.S., con Mon Brava en Punta del Este.</p></div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ===== BRISAS PUERTO MADERO ===== -->
+    <section class="fondo-blanco seccion-padding" id="brisas">
+        <div class="contenedor fade-in">
+            <span class="ubicacion-tag">Buenos Aires | Argentina</span>
+            <h2>Complejo Brisas Puerto Madero</h2>
+            <p class="bajada">Un hito arquitectónico que define el estándar de excelencia residencial y corporativa ocupa la Manzana 1K del Dique 2.</p>
             <div class="grid-3">
                 <article class="card-obra">
-                    <div class="contenedor-imagen">
-                        <img src="brisas dron.jpg" alt="Residencias Privadas" class="imagen-obra">
-                    </div>
-                    <h3>RESIDENCIAS PRIVADAS </h3><span class="calles">| 2002</span></h3>
-                    <p class="calles">Juana Manso 1661 & Olga Cossettini 1660</p>
+                    <div class="contenedor-imagen"><img src="brisas%20dron.jpg" alt="Residencias Privadas, Brisas Puerto Madero" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">2002</span>
+                    <h3>Residencias Privadas</h3>
+                    <p class="calles">Juana Manso 1661 &amp; Olga Cossettini 1660</p>
                     <p>Dos edificios destinados exclusivamente a <strong>Vivienda de Uso Permanente</strong>.</p>
                     <p class="nota-exclusividad">Queda estrictamente excluido el uso para alquileres temporarios o fines turísticos, garantizando la privacidad absoluta.</p>
                 </article>
-
                 <article class="card-obra">
-                    <div class="contenedor-imagen">
-                        <img src="HOTEL-MADERO_LOBBY_161-800x445.jpeg" alt="Viviendas en Suite" class="imagen-obra">
-                    </div>
-                    <h3>VIVIENDAS EN SUITE</h3><span class="calles">| 2004</span></h3>
+                    <div class="contenedor-imagen"><img src="HOTEL-MADERO_LOBBY_161-800x445.jpeg" alt="Lobby del Hotel Madero" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">2004</span>
+                    <h3>Viviendas en Suite</h3>
                     <p class="calles">Bvd. Rosario Vera Peñaloza 360</p>
                     <p>Sede del <strong>HOTEL MADERO</strong>, donde el arte contemporáneo y el ocio conviven con independencia de las áreas residenciales.</p>
                 </article>
-
                 <article class="card-obra">
-                    <div class="contenedor-imagen">
-                        <img src="corporativo ofi.jpg" alt="Corporativo" class="imagen-obra">
-                    </div>
-                    <h3>CORPORATIVO</h3><span class="calles">| 2003</span></h3>
+                    <div class="contenedor-imagen"><img src="corporativo%20ofi.jpg" alt="Edificio Brisas Work" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">2003</span>
+                    <h3>Corporativo · Brisas Work</h3>
                     <p class="calles">Encarnación Ezcurra 365</p>
-                    <p>Edificio oficinas comerciales premium, integrando el concepto Work & Live en un entorno único.</p>
+                    <p>Edificio de oficinas comerciales premium, integrando el concepto Work &amp; Live en un entorno único.</p>
+                    <p><a href="#oficinas" class="link-seccion">Ver oficinas en alquiler</a></p>
                 </article>
             </div>
             <p class="firma-desarrollo">Desarrollado por GIJON S.A.</p>
         </div>
     </section>
 
-    <section class="fondo-claro seccion-padding">
+    <!-- ===== OFICINAS EN ALQUILER: BRISAS WORK ===== -->
+    <section class="oficinas seccion-padding" id="oficinas">
         <div class="contenedor fade-in">
-            <span class="ubicacion-tag">BUENOS AIRES | ARGENTINA</span>
-            <h2>OBRAS CONSAGRADAS</h2>
-            <p>Proyectos de gran escala que transformaron el paisaje urbano de la ciudad.</p>
-
-            <div class="grid-3">
-               
-                <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="torres de figueroa a.jpg" alt="Torres Figueroa Alcorta" class="imagen-obra">
+            <span class="ubicacion-tag">Oficinas en alquiler | Puerto Madero</span>
+            <h2>Brisas Work</h2>
+            <p class="bajada">Edificio destinado íntegramente a oficinas comerciales premium dentro del Complejo Brisas Puerto Madero, en Encarnación Ezcurra 365, Dique 2. Plantas de 1.080 m² divididas en unidades de distintas superficies, para empresas, estudios y profesionales.</p>
+            <div class="grid-2">
+                <div>
+                    <table class="tabla-oficinas">
+                        <thead><tr><th>Planta</th><th>Unidades</th></tr></thead>
+                        <tbody>
+                            <tr><td>Planta tipo</td><td>2 al frente de 280 m² y 2 al contrafrente de 260 m²</td></tr>
+                            <tr><td>Piso 1</td><td>2 al frente de 193 m² y 2 al contrafrente de 260 m²</td></tr>
+                            <tr><td>Piso 5</td><td>10 oficinas de 36 a 280 m², pensadas para startups y profesionales</td></tr>
+                            <tr><td>Piso 8</td><td>2 oficinas de 190 m²</td></tr>
+                            <tr><td>Pisos 8 y 9</td><td>2 oficinas en dúplex de 310 m²</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <ul class="lista-sobria">
+                        <li>Edificio exclusivo de oficinas, con el concepto Work &amp; Live de Brisas.</li>
+                        <li>Superficies desde 36 m² hasta 310 m².</li>
+                        <li>Ubicación en el Dique 2 de Puerto Madero.</li>
+                    </ul>
+                    <div class="contacto-comercial">
+                        <h3>Contacto comercial</h3>
+                        <p>Mail: <a href="mailto:info@weyardevelopers.com?subject=Consulta%20oficinas%20Brisas%20Work">info@weyardevelopers.com</a></p>
+                        <p>WhatsApp: <a href="https://wa.me/5491150269675?text=Hola%2C%20quiero%20consultar%20por%20oficinas%20en%20alquiler%20en%20Brisas%20Work" target="_blank" rel="noopener">+54 9 11 5026-9675</a></p>
+                        <a class="btn btn-claro" href="https://wa.me/5491150269675?text=Hola%2C%20quiero%20consultar%20por%20oficinas%20en%20alquiler%20en%20Brisas%20Work" target="_blank" rel="noopener">Consultar disponibilidad</a>
                     </div>
-                    <h3>TORRES DE FIGUEROA ALCORTA</h3><span class="calles">| 1995</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OBRAS CONSAGRADAS ===== -->
+    <section class="fondo-claro seccion-padding" id="obras">
+        <div class="contenedor fade-in">
+            <span class="ubicacion-tag">Buenos Aires | Argentina</span>
+            <h2>Obras consagradas</h2>
+            <p class="bajada">Proyectos de gran escala que transformaron el paisaje urbano de la ciudad.</p>
+            <div class="grid-3">
+                <article class="card-obra">
+                    <div class="contenedor-imagen"><img src="torres%20de%20figueroa%20a.jpg" alt="Torres de Figueroa Alcorta" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">1995</span>
+                    <h3>Torres de Figueroa Alcorta</h3>
                     <p>Complejo residencial en Belgrano Chico sobre una manzana de 12.700 m² parquizada.</p>
                     <ul class="lista-sobria">
                         <li>3 torres de 19 pisos (189 departamentos).</li>
                         <li>Gran jardín con pileta climatizada.</li>
                         <li>Canchas de tenis, paddle y áreas de recreación.</li>
                     </ul>
-                         <p class="firma-desarrollo">Desarrollado por YAR Construcciones S.A.</p>
+                    <p class="firma-desarrollo">Desarrollado por YAR Construcciones S.A.</p>
                 </article>
-
-                <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="buenos aires.jpg" alt="Torres de Buenos Aires" class="imagen-obra">
-                    </div>
-                    <h3>TORRES DE BUENOS AIRES</h3> <span class="calles">| 1996</span></h3>
+                <article class="card-obra">
+                    <div class="contenedor-imagen"><img src="buenos-aires-hd.jpg" alt="Torres de Buenos Aires" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">1996</span>
+                    <h3>Torres de Buenos Aires</h3>
                     <p>Ubicado en Av. Belgrano 3251 sobre un terreno de 8.800 m².</p>
                     <ul class="lista-sobria">
                         <li>4 torres (12, 21 y 18 pisos) con 389 departamentos.</li>
-                        <li>Jardines, pileta, vestuarios y solarium.</li>
+                        <li>Jardines, pileta, vestuarios y solárium.</li>
                         <li>Área comercial y de servicios integrada.</li>
                     </ul>
                     <p class="firma-desarrollo">Desarrollado por YAR Construcciones S.A.</p>
-                    </article>
-                
-                 <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="beiro.jpg" alt="Torre Devoto" class="imagen-obra">
-                    </div>
-                    <h3>TORRE DEVOTO</h3><span class="calles">| 2019</span></h3>
+                </article>
+                <article class="card-obra">
+                    <div class="contenedor-imagen"><img src="beiro.jpg" alt="Torre Devoto" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">2019</span>
+                    <h3>Torre Devoto</h3>
                     <p>Desarrollado por <strong>NEHUENTE</strong>. Un edificio icónico, único y diferencial en el corazón de Villa Devoto.</p>
                     <ul class="lista-sobria">
                         <li>195 departamentos y 132 cocheras.</li>
                         <li>Amplios espacios verdes y áreas comerciales.</li>
-                        <li>Piscina, Solarium, SUM y Gimnasio.</li>
+                        <li>Piscina, solárium, SUM y gimnasio.</li>
                     </ul>
-                         <p class="firma-desarrollo">Desarrollado por NEHUENTE S.R.L.</p>
-                               
+                    <p class="firma-desarrollo">Desarrollado por NEHUENTE S.R.L.</p>
                 </article>
             </div>
-           </div>
+        </div>
     </section>
 
-    <section class="fondo-claro seccion-padding">
+    <!-- ===== MON BRAVA ===== -->
+    <section class="fondo-blanco seccion-padding" id="internacional">
         <div class="contenedor fade-in">
-            <span class="ubicacion-tag">PUNTA DEL ESTE | URUGUAY</span>
-            <h2>MON BRAVA</h2>
-            <p class="calles">Un desarrollo de <strong>SCHARGO S.A.S.</strong></p>
-            
-            <div class="contenedor-imagen" style="margin-top: 30px;">
-                <img src="mon.jpg" alt="Mon Brava" class="imagen-obra" style="height: 400px;">
-            </div>
-
-            <div class="grid-2">
+            <span class="ubicacion-tag">Punta del Este | Uruguay</span>
+            <h2>Mon Brava</h2>
+            <p class="bajada">Un desarrollo de SCHARGO S.A.S.</p>
+            <div class="contenedor-imagen"><img src="mon.jpg" alt="Mon Brava, Punta del Este" class="imagen-obra imagen-ancha" loading="lazy"></div>
+            <div class="grid-2" style="margin-top: 20px;">
                 <div>
                     <p>Ubicado en la exclusiva <strong>Parada 22 de la Brava</strong>, este proyecto se alza sobre un terreno de casi 2 hectáreas frente al mar. Logró interpretar con éxito la esencia de vivir en Punta del Este durante todo el año.</p>
                     <p>La propuesta combinó la solidez de WEYAR con el diseño de vanguardia de <strong>Obra Prima</strong>.</p>
@@ -296,25 +437,24 @@
                     <ul class="lista-sobria">
                         <li>Frente marítimo de gran escala.</li>
                         <li>Exclusivos amenities de primer nivel.</li>
-                        <li class="estado-entregado">ENTREGADO EN 2024</li>
                     </ul>
+                    <span class="estado-entregado">Entregado en 2024</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="fondo-blanco seccion-padding">
+    <!-- ===== NUEVA YORK ===== -->
+    <section class="fondo-claro seccion-padding">
         <div class="contenedor fade-in">
-            <span class="ubicacion-tag">NUEVA YORK | ESTADOS UNIDOS</span>
-            <h2>DESARROLLOS BOUTIQUE</h2>
-            <p>Diseño contemporáneo y escala íntima en las ubicaciones más estratégicas de Manhattan.</p>
-
+            <span class="ubicacion-tag">Nueva York | Estados Unidos</span>
+            <h2>Desarrollos boutique</h2>
+            <p class="bajada">Diseño contemporáneo y escala íntima en las ubicaciones más estratégicas de Manhattan.</p>
             <div class="grid-2">
-                <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="chelesea 1.jpg" alt="231W26 Chelsea" class="imagen-obra">
-                    </div>
-                    <h3>231W26 <span class="calles">| Chelsea</span></h3>
+                <article class="card-obra">
+                    <div class="contenedor-imagen"><img src="chelesea%201.jpg" alt="231W26, Chelsea" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">Chelsea</span>
+                    <h3>231W26</h3>
                     <p>Condominio boutique de nueva construcción.</p>
                     <ul class="lista-sobria">
                         <li><strong>7 exclusivas residencias</strong> de 1 y 2 dormitorios.</li>
@@ -322,12 +462,10 @@
                         <li>Diseño con techos altos y espacio exterior privado.</li>
                     </ul>
                 </article>
-
-                <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="PATAGONIA.jpg" alt="Patagonia Harlem" class="imagen-obra">
-                    </div>
-                    <h3>PATAGONIA <span class="calles">| Harlem Central</span></h3>
+                <article class="card-obra">
+                    <div class="contenedor-imagen"><img src="PATAGONIA.jpg" alt="Patagonia, Harlem Central" class="imagen-obra" loading="lazy"></div>
+                    <span class="anio">Harlem Central</span>
+                    <h3>Patagonia</h3>
                     <p>Condominio de 12 pisos inspirado en la naturaleza.</p>
                     <ul class="lista-sobria">
                         <li>Diseño contemporáneo con amplios espacios llenos de luz solar.</li>
@@ -338,30 +476,25 @@
             </div>
         </div>
     </section>
-    
-    <section class="fondo-blanco seccion-padding">
-        <div class="contenedor fade-in">
-            <span class="ubicacion-tag">HISTORIA Y TRAYECTORIA</span>
-            <h2>NUESTROS PRIMEROS DESARROLLOS</h2>
-            <p>Los cimientos de nuestra excelencia arquitectónica.</p>
 
+    <!-- ===== PRIMEROS DESARROLLOS ===== -->
+    <section class="fondo-blanco seccion-padding" id="trayectoria">
+        <div class="contenedor fade-in">
+            <span class="ubicacion-tag">Historia y trayectoria</span>
+            <h2>Nuestros primeros desarrollos</h2>
+            <p class="bajada">Los cimientos de nuestra excelencia arquitectónica.</p>
             <div class="grid-2">
-                <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="alsina.jpg" alt="Alsina Parque" class="imagen-obra">
-                    </div>
-                    <h3>ALSINA PARQUE I y II</h3>
+                <article class="card-obra">
+                    <div class="contenedor-imagen"><img src="alsina.jpg" alt="Alsina Parque" class="imagen-obra" loading="lazy"></div>
+                    <h3>Alsina Parque I y II</h3>
                     <ul class="lista-sobria">
                         <li><strong>Alsina Parque 1:</strong> Edificio de 13 pisos con 87 departamentos y 3 locales comerciales (aprox. 8.000 m²).</li>
                         <li><strong>Alsina Parque 2:</strong> Complejo de 4 torres (17 y 23 pisos) con áreas verdes. Total de 197 departamentos y 8 locales (aprox. 18.000 m²).</li>
                     </ul>
                 </article>
-
-                <article class="card-obra fade-in">
-                    <div class="contenedor-imagen">
-                        <img src="BELGRANO Park.jpg" alt="Belgrano Park" class="imagen-obra">
-                    </div>
-                    <h3>BELGRANO PARK</h3>
+                <article class="card-obra">
+                    <div class="contenedor-imagen"><img src="BELGRANO%20Park.jpg" alt="Belgrano Park" class="imagen-obra" loading="lazy"></div>
+                    <h3>Belgrano Park</h3>
                     <p>Ubicado en las exclusivas Barrancas de Belgrano (11 de Septiembre 2125).</p>
                     <ul class="lista-sobria">
                         <li>Edificio de 10 pisos conformado por semipisos.</li>
@@ -369,72 +502,63 @@
                     </ul>
                 </article>
             </div>
-               <p class="firma-desarrollo">Desarrollado por YAR Construcciones S.A.</p>
+            <p class="firma-desarrollo">Desarrollado por YAR Construcciones S.A.</p>
         </div>
     </section>
 
-    <footer class="seccion-respaldo">
-        <div class="contenedor fade-in">
-            <div class="info-corporativa">
-                <h2>WEYAR <br><span class="subtitle-footer">LIFESTYLE DEVELOPERS</span></h2>
-                <p class="experiencia-tag">35+ Años de Experiencia en Desarrollos de Excelencia</p>
-                <p class="filosofia">
-                    El grupo WEYAR se caracteriza por su solidez, confianza y previsibilidad. 
-                    Construimos exclusivamente con capitales propios y, en general, sobre terrenos propios, 
-                    garantizando siempre la arquitectura como premisa y terminaciones de primer nivel.
-                </p>
+    <!-- ===== FOOTER / CONTACTO ===== -->
+    <footer class="footer" id="contacto">
+        <div class="contenedor">
+            <p class="footer-logo">WEYAR</p>
+            <p class="footer-sub">Lifestyle Developers · 35+ años de desarrollos de excelencia</p>
+            <div class="footer-contacto">
+                <a href="mailto:info@weyardevelopers.com">info@weyardevelopers.com</a>
+                <a href="https://wa.me/5491150269675" target="_blank" rel="noopener">WhatsApp +54 9 11 5026-9675</a>
+                <a href="#oficinas">Oficinas en alquiler</a>
             </div>
-
-            <div class="sociedades-grid">
-                <div class="sociedad-item">
-                    <h4>YAR</h4>
-                    <p>Construcciones S.A.</p>
-                </div>
-                <div class="sociedad-item">
-                    <h4>GIJON</h4>
-                    <p>S.A.</p>
-                </div>
-                <div class="sociedad-item">
-                    <h4>SCHARGO</h4>
-                    <p>S.A.S.</p>
-                </div>
-                <div class="sociedad-item">
-                    <h4>NEHUENTE</h4>
-                    <p>SRL.</p>
-                </div>
+            <div class="empresas">
+                <div><div class="empresa-nombre">YAR</div><div class="empresa-tipo">Construcciones S.A.</div></div>
+                <div><div class="empresa-nombre">GIJON</div><div class="empresa-tipo">S.A.</div></div>
+                <div><div class="empresa-nombre">SCHARGO</div><div class="empresa-tipo">S.A.S.</div></div>
+                <div><div class="empresa-nombre">NEHUENTE</div><div class="empresa-tipo">S.R.L.</div></div>
             </div>
-
-            <div class="cierre-legal">
-                <p>Contacto: info@weyardevelopers.com</p>
-                <p>&copy; 2026 WEYAR Lifestyle Developers. Todos los derechos reservados.</p>
-            </div>
+            <p class="copy">© <span id="anio"></span> WEYAR Lifestyle Developers. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/+5491150269675" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-        </svg>
+    <a href="https://wa.me/5491150269675" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9 3 3.3 8.68 3.3 15.7c0 2.24.6 4.43 1.72 6.36L3.2 28.8l6.92-1.8a12.8 12.8 0 0 0 5.92 1.45h.01c7.03 0 12.75-5.7 12.75-12.72C28.8 8.68 23.07 3 16.04 3zm0 23.3h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.1 1.07 1.1-4-.26-.41a10.5 10.5 0 0 1-1.62-5.6c0-5.84 4.77-10.6 10.65-10.6 5.86 0 10.63 4.76 10.63 10.6 0 5.85-4.77 10.62-10.6 10.62zm5.83-7.94c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.58-.95-.85-1.59-1.9-1.78-2.21-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.72-.98-2.36-.26-.62-.52-.53-.72-.54h-.61c-.21 0-.56.08-.85.4-.29.31-1.12 1.09-1.12 2.66 0 1.57 1.14 3.08 1.3 3.3.16.2 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.67.77.24 1.46.21 2.01.13.61-.09 1.89-.77 2.15-1.51.27-.75.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37z"/></svg>
     </a>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const elementosAnimar = document.querySelectorAll('.fade-in');
+        document.getElementById('anio').textContent = new Date().getFullYear();
 
-            const observador = new IntersectionObserver((entradas) => {
-                entradas.forEach(entrada => {
-                    if (entrada.isIntersecting) {
-                        entrada.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.15 
-            });
-
-            elementosAnimar.forEach(elemento => {
-                observador.observe(elemento);
-            });
+        // Menú: fondo sólido al hacer scroll y apertura en celulares
+        const nav = document.getElementById('nav');
+        const toggle = document.getElementById('nav-toggle');
+        const links = document.getElementById('nav-links');
+        const alScroll = () => nav.classList.toggle('solida', window.scrollY > 40);
+        window.addEventListener('scroll', alScroll, { passive: true });
+        alScroll();
+        toggle.addEventListener('click', () => {
+            const abierto = links.classList.toggle('abierto');
+            toggle.setAttribute('aria-expanded', abierto);
         });
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            links.classList.remove('abierto');
+            toggle.setAttribute('aria-expanded', 'false');
+        }));
+
+        // Aparición suave de secciones
+        const animar = document.querySelectorAll('.fade-in');
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver(entradas => {
+                entradas.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+            }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+            animar.forEach(el => obs.observe(el));
+        } else {
+            animar.forEach(el => el.classList.add('visible'));
+        }
     </script>
 </body>
 </html>
